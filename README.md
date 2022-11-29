@@ -11,14 +11,14 @@ Api movie tanpa database, melainkan hasil Scrapping dari web cine.xxxx.com
 #### Get New Release
 
 ```bash
-  GET /new-release
+  GET v1/app/new-release
 ```
 
 
 #### Get Data Search
 
 ```bash
-  GET /search/:keyword/:page
+  GET v1/app/search/:keyword/:page
 ```
 | Parameter  | Type     | Description                                 |
 | :--------- | :------- | :------------------------------------------ |
@@ -29,12 +29,12 @@ Api movie tanpa database, melainkan hasil Scrapping dari web cine.xxxx.com
 #### Get Genre
 
 ```bash
-  GET /genre
+  GET v1/app/genre
 ```
 #### Get Data By Genre
 
 ```bash
-  GET /genre/:slug/:page
+  GET v1/app/genre/:slug/:page
 ```
 
 | Parameter  | Type     | Description                                 |
@@ -45,13 +45,13 @@ Api movie tanpa database, melainkan hasil Scrapping dari web cine.xxxx.com
 #### Get Data Year
 
 ```bash
-  GET /year
+  GET v1/app/year
 ```
 
 #### Get Data By Year
 
 ```bash
-  GET /year/:slug/:page
+  GET v1/app/year/:slug/:page
 ```
 | Parameter  | Type     | Description                                 |
 | :--------- | :------- | :------------------------------------------ |
@@ -62,7 +62,7 @@ Api movie tanpa database, melainkan hasil Scrapping dari web cine.xxxx.com
 #### Get Data Movies
 
 ```bash
-  GET /movies/:page
+  GET v1/app/movies/:page
 ```
 | Parameter  | Type     | Description                                 |
 | :--------- | :------- | :------------------------------------------ |
@@ -71,7 +71,7 @@ Api movie tanpa database, melainkan hasil Scrapping dari web cine.xxxx.com
 #### Get Data Movies Detail
 
 ```bash
-  GET /movies-detail/:slug/:title
+  GET v1/app/movies-detail/:slug/:title
 ```
 | Parameter  | Type     | Description                                 |
 | :--------- | :------- | :------------------------------------------ |
@@ -81,7 +81,7 @@ Api movie tanpa database, melainkan hasil Scrapping dari web cine.xxxx.com
 #### Get Data Movies Video
 
 ```bash
-  GET /movies-video/:id
+  GET v1/app/movies-video/:id
 ```
 | Parameter  | Type     | Description                                 |
 | :--------- | :------- | :------------------------------------------ |
@@ -91,7 +91,7 @@ Api movie tanpa database, melainkan hasil Scrapping dari web cine.xxxx.com
 #### Get Data Series
 
 ```bash
-  GET /series/:page
+  GET v1/app/series/:page
 ```
 | Parameter  | Type     | Description                                 |
 | :--------- | :------- | :------------------------------------------ |
@@ -100,7 +100,7 @@ Api movie tanpa database, melainkan hasil Scrapping dari web cine.xxxx.com
 #### Get Data Series Detail
 
 ```bash
-  GET /series-detail/:slug/:title
+  GET v1/app/series-detail/:slug/:title
 ```
 | Parameter  | Type     | Description                                 |
 | :--------- | :------- | :------------------------------------------ |
@@ -110,7 +110,7 @@ Api movie tanpa database, melainkan hasil Scrapping dari web cine.xxxx.com
 #### Get Data Episode Detail
 
 ```bash
-  GET /series-eps/:slug/:title
+  GET v1/app/series-eps/:slug/:title
 ```
 | Parameter  | Type     | Description                                 |
 | :--------- | :------- | :------------------------------------------ |
@@ -120,7 +120,7 @@ Api movie tanpa database, melainkan hasil Scrapping dari web cine.xxxx.com
 #### Get Data Series Video
 
 ```bash
-  GET /series-video/:id
+  GET v1/app/series-video/:id
 ```
 | Parameter  | Type     | Description                                 |
 | :--------- | :------- | :------------------------------------------ |
@@ -140,3 +140,4 @@ Api movie tanpa database, melainkan hasil Scrapping dari web cine.xxxx.com
 - List Movies
 - List Series
 - List Episode
+
