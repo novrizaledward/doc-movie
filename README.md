@@ -1,8 +1,18 @@
 
-# REST-API MOVIE (Scrapping)
+# API_MOVIE_WITH_DB  
 
-Api movie tanpa database, melainkan hasil Scrapping dari web cine.xxxx.com
+API movie dengan database mongo, yang di scrapping dari web brazil cine.xxxx.com. data video menggunakan dubbing bahasa portugis. jadi semua info movie beserta file video nya disimpan ke dalam database.
 
+
+
+## Features
+
+- Search
+- Genre
+- All Movie
+- All Series
+- Year ( Movie & Series by Year)
+- New Release
 
 
 
@@ -11,133 +21,92 @@ Api movie tanpa database, melainkan hasil Scrapping dari web cine.xxxx.com
 #### Get New Release
 
 ```bash
-  GET v1/app/new-release
+  GET /new-release
 ```
 
+#### Get Genre
+
+```bash
+  GET /genre
+```
+
+#### Get Year
+
+```bash
+  GET /year
+```
 
 #### Get Data Search
 
 ```bash
-  GET v1/app/search/:keyword/:page
+  GET /search?keyword={title}&page={pages}
 ```
-| Parameter  | Type     | Description                                 |
-| :--------- | :------- | :------------------------------------------ |
-| `keyword`  | `string` | **Required** keyword yang ingin dicari      |
-| `page`     | `string` | **Required** nomor page untuk pagination    |
 
- 
-#### Get Genre
+| Parameter | Type     | Description                              |
+| :-------- | :------- | :--------------------------------------- |
+| `title`   | `string` | **Required** Judul Movie & Series        |
+| `pages`   | `string` | **Required** nomor page untuk pagination |
 
-```bash
-  GET v1/app/genre
-```
 #### Get Data By Genre
 
 ```bash
-  GET v1/app/genre/:slug/:page
+  GET /genre/{genre}?page={pages}
 ```
 
-| Parameter  | Type     | Description                                 |
-| :--------- | :------- | :------------------------------------------ |
-| `slug`     | `string` | **Required** slug pada item endpoint genre |
-| `page`     | `string` | **Required** nomor page untuk pagination    |
-
-#### Get Data Year
-
-```bash
-  GET v1/app/year
-```
+| Parameter | Type     | Description                                               |
+| :-------- | :------- | :-------------------------------------------------------- |
+| `genre    | `string` | **Required** nama genre yang diambil dari endpoint /genre |
+| `pages`   | `string` | **Required** nomor page untuk pagination                  |
 
 #### Get Data By Year
 
 ```bash
-  GET v1/app/year/:slug/:page
+  GET /year/{year}?page={pages}
 ```
-| Parameter  | Type     | Description                                 |
-| :--------- | :------- | :------------------------------------------ |
-| `slug`     | `string` | **Required** tahun yang ingin ditampilkan   |
-| `page`     | `string` | **Required** nomor page untuk pagination    |
 
- 
+| Parameter | Type     | Description                               |
+| :-------- | :------- | :---------------------------------------- |
+| `year`    | `string` | **Required** tahun yang ingin ditampilkan |
+| `page`    | `string` | **Required** nomor page untuk pagination  |
+
 #### Get Data Movies
 
 ```bash
-  GET v1/app/movies/:page
+  GET /movies/:page
 ```
-| Parameter  | Type     | Description                                 |
-| :--------- | :------- | :------------------------------------------ |
-| `page`     | `string` | **Required** nomor page untuk pagination    |
- 
-#### Get Data Movies Detail
 
-```bash
-  GET v1/app/movies-detail/:slug/:title
-```
-| Parameter  | Type     | Description                                 |
-| :--------- | :------- | :------------------------------------------ |
-| `slug`     | `string` | **Required** slug pada item endpoint movies |
-| `title`    | `string` | **Required** title pada slug di item endpoint movies |
-
-#### Get Data Movies Video
-
-```bash
-  GET v1/app/movies-video/:id
-```
-| Parameter  | Type     | Description                                 |
-| :--------- | :------- | :------------------------------------------ |
-| `id`       | `string` | **Required** id yang diambil dari videoid di movies detail |
-
+| Parameter | Type     | Description                              |
+| :-------- | :------- | :--------------------------------------- |
+| `page`    | `string` | **Required** nomor page untuk pagination |
 
 #### Get Data Series
 
 ```bash
-  GET v1/app/series/:page
+  GET /series/:page
 ```
-| Parameter  | Type     | Description                                 |
-| :--------- | :------- | :------------------------------------------ |
-| `page`     | `string` | **Required** nomor page untuk pagination    |
- 
-#### Get Data Series Detail
+
+| Parameter | Type     | Description                              |
+| :-------- | :------- | :--------------------------------------- |
+| `page`    | `string` | **Required** nomor page untuk pagination |
+
+#### Get Data Detail
 
 ```bash
-  GET v1/app/series-detail/:slug/:title
+  GET  /detail/{type}?id={id}
 ```
-| Parameter  | Type     | Description                                 |
-| :--------- | :------- | :------------------------------------------ |
-| `slug`     | `string` | **Required** slug pada item endpoint series |
-| `title`    | `string` | **Required** title pada slug di item endpoint series |
 
-#### Get Data Episode Detail
+| Parameter | Type     | Description                                                                            |
+| :-------- | :------- | :------------------------------------------------------------------------------------- |
+| `type`    | `string` | **Required** type sesuai dengan data id yang di ambil contoh : `series/movies/episode` |
+| `id`      | `string` | **Required** id merupakan id movie/series/episode                                      |
+
+#### Get Data Video
 
 ```bash
-  GET v1/app/series-eps/:slug/:title
+  POST  /Video
 ```
-| Parameter  | Type     | Description                                 |
-| :--------- | :------- | :------------------------------------------ |
-| `slug`     | `string` | **Required** slug pada item endpoint series |
-| `title`    | `string` | **Required** title pada slug di item endpoint series |
 
-#### Get Data Series Video
-
-```bash
-  GET v1/app/series-video/:id
-```
-| Parameter  | Type     | Description                                 |
-| :--------- | :------- | :------------------------------------------ |
-| `id`       | `string` | **Required** id yang diambil dari videoid di episode detail |
-
- 
-
-
-## Features
-
-- New Release
-- Search
-- Genre
-- Data By Genre
-- Year
-- Data By Year
-- List Movies
-- List Series
-- List Episode
-
+| Parameter | Type     | Description                                                             |
+| :-------- | :------- | :---------------------------------------------------------------------- |
+| `id`      | `string` | **Required** id video yang ingin di tampilkan, dapat dari movie/episode |
+| `token`   | `string` | **Required** token yang didapatkan dari sinop                           |
